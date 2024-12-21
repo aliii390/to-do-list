@@ -47,5 +47,5 @@ try {
     echo "Erreur lors de l'insertion : " . $e->getMessage();
 }
 
-// header("Location: ../front/accueil/accueil.php");
-// exit;
+header("Location: ../front/acceuil/acceuil.php");
+exit;
