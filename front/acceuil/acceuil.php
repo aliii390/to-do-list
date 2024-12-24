@@ -40,21 +40,21 @@ try {
   <h1 class="text-center font-logo font-title text-[36px] sm:text-[40px] md:text-[48px] lg:text-[55px] bg-gradient-to-r from-[#02d4ffcc] to-[#020024] text-transparent bg-clip-text">
     Agenda.
   </h1>
-  <i class="fa-solid fa-user text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-100"></i>
+  <a href="../profil/profil.php">  <i class="fa-solid fa-user text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white"></i></a>
 </header>
 
 <main>
 <section class="min-h-screen w-full flex items-center justify-center font-sans py-10">
     <div class="bg-white rounded-xl shadow-xl p-6 sm:p-8 md:p-10 w-full max-w-md md:max-w-2xl lg:max-w-4xl">
-        <!-- Header -->
+       
         <div class="mb-6 text-center">
             <h1 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Ma Todo List</h1>
             <p class="text-sm md:text-base text-gray-600">Organisez vos tâches efficacement et atteignez vos objectifs.</p>
         </div>
 
-        <!-- Add Task -->
+        
         <div class="mb-8">
-            <!-- Formulaire pour ajouter une tâche -->
+           
             <form action="../../process/process-tache.php" method="post">
                 <div class="flex flex-col gap-4">
                     <input 
@@ -71,13 +71,13 @@ try {
             </form>
         </div>
 
-        <!-- Task List -->
+       
         <div class="space-y-4">
             <?php
-            // Afficher les tâches récupérées depuis la base de données
+           
             if (!empty($taches)) {
                 foreach ($taches as $tache): ?>
-            <!-- Task Item -->
+          
             <div class="flex flex-col sm:flex-row items-center justify-between bg-gray-100 p-4 rounded-lg shadow-sm">
                 <div class="flex flex-col sm:flex-row items-start sm:items-center w-full">
                     <h3 class="text-gray-800 text-sm sm:text-base font-semibold mb-2 sm:mb-0"><?php echo htmlspecialchars($tache['titre']);  ?></h3>

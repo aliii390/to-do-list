@@ -9,6 +9,9 @@ module.exports = {
       fontFamily: {
         title: ["Poppins", "sans-serif"],
       },
+      colors:{
+        connect : "#2bb3e7",
+      }
 
     },
   },

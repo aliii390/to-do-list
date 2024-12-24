@@ -18,13 +18,13 @@ try {
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($user && password_verify($password, $user['mdp'])) {
-        // Connexion réussie
+      
         $_SESSION['pseudo'] = [
             'id' => $user['id'],
             'pseudo' => $user['pseudo']
         ];
     } elseif (!$user) {
-        // Ajouter un nouvel utilisateur si le pseudo n'existe pas
+        
         $hash = password_hash($password, PASSWORD_DEFAULT);
         $sql = "INSERT INTO user (pseudo, mdp) VALUES (:pseudo, :mdp)";
         $stmt = $pdo->prepare($sql);
