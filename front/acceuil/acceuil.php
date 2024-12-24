@@ -1,5 +1,6 @@
 <?php
 require_once '../../connect/connectDB.php';
+require_once '../../utils/check-user.php';
 session_start();
 
 // Requête SQL pour récupérer les tâches avec le pseudo de l'utilisateur
@@ -23,6 +24,31 @@ try {
     echo "Erreur lors de la requête des tâches : " . $error->getMessage();
     die();
 }
+
+
+
+
+// test pour récupérer les pseudo en faisant une url dynamique 
+
+
+$sqlPseudo = "SELECT user.pseudo FROM user ";
+
+try {
+    // Préparer et exécuter la requête
+    $stmt = $pdo->prepare($sqlPseudo);
+    $stmt->execute();
+    $pseudos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+} catch (PDOException $error) {
+   
+    echo "Erreur lors de la requête des pseudos : " . $error->getMessage();
+    die();
+}
+
+
+// var_dump($pseudos);
+// die();
+
 ?>
 
 <!DOCTYPE html>
@@ -42,6 +68,14 @@ try {
   </h1>
   <a href="../profil/profil.php">  <i class="fa-solid fa-user text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white"></i></a>
 </header>
+
+
+  
+
+
+
+
+
 
 <main>
 <section class="min-h-screen w-full flex items-center justify-center font-sans py-10">
